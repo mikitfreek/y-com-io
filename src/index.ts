@@ -38,13 +38,27 @@ function init() {
       }
       ws.send(JSON.stringify(payLoad))
 
+      const payLoad1 = {
+        'method': 'request',
+        'type': 'bucket',
+        'cat': cat
+      }
+      ws.send(JSON.stringify(payLoad1))
+
       console.log('Client id set successfully ' + clientId)
     }
     else if (res.method === 'resolve') {
 
+      if (res.type === 'data') {
+
       let items = updateItems(res.data);
       document.getElementById('container').appendChild(items)
       console.log(res.data);
+              
+      } else if (res.type === 'bucket') {
+      
+        console.log(res.data);
+      }
     }
   }
 }

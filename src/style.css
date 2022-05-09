@@ -12,11 +12,6 @@ body {
   --bg-dark: #333;
 }
 
-body.dark-mode {
-  background-color: var(--bg-dark);
-  color:#eee
-}
-
 .main-container {
   display: flex;
   justify-content: center;
@@ -31,13 +26,48 @@ body.dark-mode {
 .items {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #444;
+  background-color: #eee;
   padding: 10px;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    background-color: blue;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 760px) {
+  .items {
+    grid-template-columns: auto auto;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .items {
+    grid-template-columns: auto;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 1420px) {
+  .items {
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .items {
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px;
+  }
 }
 
 .items .item {
   display: flex;
-  background-color: #4444;
+  background-color: #eee;
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   margin: 10px;
@@ -62,3 +92,15 @@ body.dark-mode {
 .items .item .onsale {
   color: rgb(211, 24, 24)
 }
+
+
+
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color:#eee
+}
+
+
+body.dark-mode .items {background-color: #444;}
+body.dark-mode .items .item {background-color: #444;border-color:rgba(0, 0, 0, 0.8);}

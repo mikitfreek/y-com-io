@@ -28,15 +28,6 @@ function filterIt(arr, searchKey) {
 
 ## Usage
 
-```
-npm start
-
-*development*
-npm run build   - build package
-npm run live    - live backend, static frontend (use npm build while using it)
-npm run dev     - offline backend, live frontend
-```
-
 ### Install Typscript
 
 ```
@@ -50,6 +41,15 @@ git clone https://github.com/mikitfreek/y-com-io.git
 cd y-com-io
 npm install # or yarn
 npm start
+```
+
+### Dev
+
+```
+npm run live    - live backend, static frontend (use npm build while using it)
+npm run build   - build frontend package
+
+npm run dev     - offline backend, live frontend
 ```
 
 ### Add branch
@@ -74,5 +74,3 @@ git add --all
 git commit -m "Commit all"
 git push -u origin main
 ```
-
-

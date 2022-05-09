@@ -115,10 +115,11 @@ function connect(ws, req) {
       if (res.type === 'data') {
         // res.cat
 
-        let data = baza[res.cat];
+        const data = baza[res.cat];
 
         const payLoad = {
           'method': 'resolve',
+          'type': 'data',
           'data': data
         }
 
@@ -127,19 +128,28 @@ function connect(ws, req) {
         //   clients[c.id].connection.send(JSON.stringify(payLoad))
         // })
         ws.send(JSON.stringify(payLoad))
-        
-        console.log("here")
         // res.page
       }
       else if (res.type === 'bucket') {
-        
+
+        const data = clients[clientId].bucket;
+
+        const payLoad = {
+          'method': 'resolve',
+          'type': 'bucket',
+          'data': data
+        }
+
+        ws.send(JSON.stringify(payLoad))
+
+        console.log("here")
       }
     }
   })
 
   // Connection close
   ws.on('close', function() {
-    const clientId = ws.id
+    // const clientId = ws.id
 
     delete clients[clientId]
 
