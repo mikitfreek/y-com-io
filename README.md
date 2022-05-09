@@ -67,10 +67,10 @@ $ git remote -v
 $ git push -u origin main
 ```
 
-#### override all files
+#### override all changes in all files
 
 ```
 $ git add --all
-$ git commit -m "Initial commit"
+$ git commit -m "Commit all"
 $ git push -u origin main
 ```
