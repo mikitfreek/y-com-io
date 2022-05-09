@@ -1,12 +1,14 @@
 ## TODO
 
-#### Database (items.json)
+### Frontend ( src/* )
+
+### Backend ( server.js )
+
+#### Database ( items.json )
 ```
 - fetch data by categories,
-- fetch only amount of prduct that can be displayed at once on screen
+- fetch only amount of product that can be displayed at once on screen
 ```
-
-#### Frontend
 
 #### Basket
 
@@ -14,6 +16,7 @@
 
 ```
 *https://stackoverflow.com/questions/8517089/js-search-in-object-values*
+
 function filterIt(arr, searchKey) {
   return arr.filter(obj => Object.keys(obj).some(key => obj[key].includes(searchKey)));
 }
