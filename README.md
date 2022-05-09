@@ -2,17 +2,21 @@
 
 ### Frontend ( src/* )
 
+```
+- fetch data by categories,
+- fetch only amount of items that can be displayed on a screen at once
+```
+
 ### Backend ( server.js )
 
 #### Database ( items.json )
+
 ```
 - fetch data by categories,
 - fetch only amount of product that can be displayed at once on screen
 ```
 
-#### Basket
-
-#### Searchbar?
+#### Basket, Searchbar?
 
 ```
 *https://stackoverflow.com/questions/8517089/js-search-in-object-values*
