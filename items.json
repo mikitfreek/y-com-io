@@ -1,0 +1,25 @@
+{
+    "laptops": [
+        {
+            "item": "Laptop 15 inch", 
+            "spec": "i5 11gen, 16gb ram, RTX3050",
+            "price": 4199
+        },
+        {
+            "item": "Laptop 15 inch", 
+            "spec": "i5 11gen, 16gb ram, RTX3050",
+            "price": 4199
+        },
+        {
+            "item": "Laptop 15 inch", 
+            "spec": "i5 11gen, 16gb ram, RTX3050",
+            "price": 4199
+        },
+        {
+            "item": "Laptop 15 inch", 
+            "spec": "i5 11gen, 16gb ram, RTX3050",
+            "price": 4199
+        }
+    ],
+    "pcs": []
+}

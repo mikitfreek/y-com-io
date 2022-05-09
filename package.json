@@ -1,0 +1,41 @@
+{
+  "name": "tajan-three-js",
+  "version": "1.0.0",
+  "description": "three.js + typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "live": "nodemon index.js",
+    "dev": "webpack serve --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+"
+  },
+  "keywords": [],
+  "author": "Huang Qi",
+  "license": "MIT",
+  "bugs": {
+    "url": "/issues"
+  },
+  "homepage": "#readme",
+  "devDependencies": {
+    "css-loader": "latest",
+    "html-webpack-plugin": "latest",
+    "progress-bar-webpack-plugin": "latest",
+    "style-loader": "latest",
+    "ts-loader": "latest",
+    "typescript": "latest",
+    "webpack": "latest",
+    "webpack-cli": "latest",
+    "webpack-dev-server": "latest"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "uuid": "^8.3.2",
+    "ws": "^8.5.0"
+  }
+}

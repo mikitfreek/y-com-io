@@ -1,0 +1,18 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color0: #fff;
+  --bg: #eee;
+  --bg-dark: #333;
+}
+
+body {
+  background-color: var(--bg);
+}
+.dark-mode body {
+  background-color: var(--bg-dark);
+}
