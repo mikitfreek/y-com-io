@@ -52,12 +52,6 @@ npm install # or yarn
 npm start
 ```
 
-### Add branch
-```
-git branch -M main
-git remote add origin https://github.com/mikitfreek/y-com-io.git
-```
-
 ### Upload
 
 ```
@@ -73,4 +67,10 @@ git push -u origin main
 git add --all
 git commit -m "Commit all"
 git push -u origin main
+```
+
+### Add branch
+```
+git branch -M main
+git remote add origin https://github.com/mikitfreek/y-com-io.git
 ```
