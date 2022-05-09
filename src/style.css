@@ -2,6 +2,8 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  background-color: var(--bg);
 }
 
 :root {
@@ -10,9 +12,53 @@ body {
   --bg-dark: #333;
 }
 
-body {
-  background-color: var(--bg);
-}
-.dark-mode body {
+body.dark-mode {
   background-color: var(--bg-dark);
+  color:#eee
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  width: auto;
+  max-width: 1300px;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #444;
+  padding: 10px;
+}
+
+.items .item {
+  display: flex;
+  background-color: #4444;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  margin: 10px;
+  font-size: 30px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.items .item .label {
+  text-align: left;
+}
+
+.items .item .spec {
+  text-align: left;
+  font-size: 0.8em;
+}
+
+.items .item .price {
+  text-align: right;
+}
+
+.items .item .onsale {
+  color: rgb(211, 24, 24)
 }

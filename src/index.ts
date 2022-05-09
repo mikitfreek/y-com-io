@@ -2,7 +2,8 @@
 import './style.css';
 
 let clientId,
-    wss
+    wss,
+    currency = " zł"
 
 initView()
 
@@ -42,7 +43,7 @@ function init() {
     else if (res.method === 'resolve') {
 
       let items = updateItems(res.data);
-      document.getElementById('body').appendChild(items)
+      document.getElementById('container').appendChild(items)
       console.log(res.data);
     }
   }
@@ -69,12 +70,26 @@ function updateItems(data) {
   for (let i = 0; i < data.length; i++) {
     const item = document.createElement('div')
     item.className = 'item'
-    const label = document.createElement('div')
-    label.className = 'label'
-    // if (data[i].sale === true)
-    //   label.className += ' sale'
-    label.innerHTML = data[i].item
-    item.appendChild(label)
+      const label = document.createElement('div')
+      label.className = 'label'
+      const spec = document.createElement('div')
+      spec.className = 'spec'
+      const price = document.createElement('div')
+      price.className = 'price'
+
+      label.innerHTML = data[i].item
+      item.appendChild(label)
+
+      spec.innerHTML = data[i].spec
+      item.appendChild(spec)
+
+      price.innerHTML = data[i].price + currency
+      if ( data[i].hasOwnProperty('onsale') ) {
+        price.classList.add('onsale')
+        price.innerHTML = data[i].onsale + currency
+      }
+      item.appendChild(price)
+
     items.appendChild(item)
   }
   return items
@@ -90,15 +105,35 @@ function toggleDarkMode() {
 
 function renderUI() {
   const d = document
+  
   const nav = d.createElement('section')
-  const body = d.createElement('section')
+  const mainCon = d.createElement('section')
   const foot = d.createElement('section')
+
   nav.id = 'nav'
-  body.id = 'body'
+
+  // mainCon.id = 'main-container'
+  mainCon.classList.add('main')// = 'body'
+    const mcon = d.createElement('div')
+    
+    mcon.classList.add('main-container')
+      const con = d.createElement('div')
+      mcon.appendChild(con)
+      con.id = 'container'
+      con.classList.add('container')
+
+    mainCon.appendChild(mcon)
+
   foot.id = 'foot'
+
   d.body.appendChild(nav)
-  d.body.appendChild(body)
+  d.body.appendChild(mainCon)
   d.body.appendChild(foot)
+
+  const drkmd = d.createElement('button')
+  drkmd.innerHTML = "Toggle darkmode"
+  drkmd.onclick = () => toggleDarkMode();
+  d.body.appendChild(drkmd)
 }
 
 function updateUI() {

@@ -1,3 +1,24 @@
+## TODO
+
+#### Database (items.json)
+```
+- fetch data by categories,
+- fetch only amount of prduct that can be displayed at once on screen
+```
+
+#### Frontend
+
+#### Basket
+
+#### Searchbar?
+
+```
+*https://stackoverflow.com/questions/8517089/js-search-in-object-values*
+function filterIt(arr, searchKey) {
+  return arr.filter(obj => Object.keys(obj).some(key => obj[key].includes(searchKey)));
+}
+```
+
 ## Usage
 
 ```
