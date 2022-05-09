@@ -61,6 +61,15 @@ $ git remote add origin https://github.com/mikitfreek/y-com-io.git
 ### Upload
 
 ```
+$ git add <files>
+$ git commit -m “Your description”
+$ git remote -v
+$ git push -u origin main
+```
+
+#### override all files
+
+```
 $ git add --all
 $ git commit -m "Initial commit"
 $ git push -u origin main
