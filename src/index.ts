@@ -88,6 +88,15 @@ function updateItems(data) {
       label.className = 'label'
       const spec = document.createElement('div')
       spec.className = 'spec'
+
+      const dimg = document.createElement('div')
+        const img = document.createElement('img')
+        if ( data[i].hasOwnProperty('img') )
+          img.src = data[i].img;
+        else img.src = 'https://via.placeholder.com/420x315';
+        dimg.appendChild(img)
+      dimg.className = 'img'
+
       const price = document.createElement('div')
       price.className = 'price'
 
@@ -97,6 +106,8 @@ function updateItems(data) {
       spec.innerHTML = data[i].spec
       item.appendChild(spec)
 
+      item.appendChild(dimg)
+      
       price.innerHTML = data[i].price + currency
       if ( data[i].hasOwnProperty('onsale') ) {
         price.classList.add('onsale')
