@@ -85,11 +85,41 @@ function connect(ws, req) {
   // ws.id = req.headers['sec-websocket-key'];
   const clientIp = req.socket.remoteAddress;
 
+  const bucket = [
+    {
+        "item": "Laptop 15 inch", 
+        "spec": "i5 11gen, 16gb ram, RTX3050",
+        "price": 4199,
+        "onsale": 3999
+    },
+    {
+        "item": "Laptop 15 inch", 
+        "spec": "i5 11gen, 16gb ram, RTX3050",
+        "price": 4199
+    },
+    {
+        "item": "Laptop 15 inch", 
+        "spec": "i5 11gen, 16gb ram, RTX3050",
+        "price": 4199
+    },
+    {
+        "item": "Laptop 15 inch", 
+        "spec": "i5 11gen, 16gb ram, RTX3050",
+        "price": 4199
+    },
+    {
+        "item": "Laptop 15 inch", 
+        "spec": "i5 11gen, 16gb ram, RTX3050",
+        "price": 4199,
+        "onsale": 3999
+    }
+]
+
   const clientData = {
     'id': clientId,
     'connection': ws,
     'ip': clientIp,
-    'bucket': []
+    'bucket': bucket
   }
   clients[clientId] = clientData
 
@@ -112,6 +142,7 @@ function connect(ws, req) {
 
     // 
     if (res.method === 'request') {
+
       if (res.type === 'data') {
         // res.cat
 
@@ -130,9 +161,20 @@ function connect(ws, req) {
         ws.send(JSON.stringify(payLoad))
         // res.page
       }
+
       else if (res.type === 'bucket') {
 
         const data = clients[clientId].bucket;
+
+        if (res.action === 'add') {
+
+          data.push(res.data)
+          console.log("here")
+        }
+        else if (res.action === 'del') {
+
+          data.splice(res.data, 1);
+        }
 
         const payLoad = {
           'method': 'resolve',
@@ -142,7 +184,7 @@ function connect(ws, req) {
 
         ws.send(JSON.stringify(payLoad))
 
-        console.log("here")
+        // console.log("here")
       }
     }
   })

@@ -100,6 +100,51 @@ body {
 }
 
 
+.items.bucket {
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  padding: 6px;
+}
+
+.items.bucket .item {
+  display: flex;
+  background-color: #eee;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 0.1em 1em;
+  margin: 0.1em;
+  font-size: 30px;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+align-items: center;
+}
+
+.items.bucket .item .img img {
+  width: 100%;
+  height: auto;
+  max-height: 2em;
+  margin: 0 0;
+}
+
+.items.bucket .item .label {
+  text-align: left;
+}
+
+.items.bucket .item .spec {
+  text-align: left;
+  font-size: 0.8em;
+}
+
+.items.bucket .item .price {
+  text-align: right;
+}
+
+.items.bucket .item .onsale {
+  color: rgb(211, 24, 24)
+}
+
+
 
 
 body.dark-mode {
