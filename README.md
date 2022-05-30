@@ -9,6 +9,10 @@
 
 ### Backend ( server.js )
 
+```
+https://blog.wrappixel.com/building-a-shopping-cart-in-nodejs/
+```
+
 #### Database ( items.json )
 
 ```
